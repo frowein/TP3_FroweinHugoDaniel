@@ -10,7 +10,7 @@ public class Rectangulo{
 	}
 	
 	public Rectangulo(double p_ancho, double p_alto){
-	this.setOrigen(p_origen);
+	this.setOrigen(new Punto());
 	this.setAncho(p_ancho);
 	this.setAlto(p_alto);
 	}
@@ -45,8 +45,8 @@ public class Rectangulo{
 	
 	public void caracteristicas(){
 	System.out.prinln("****** Rectangulo ******");
-	System.out.prinln();
-	System.out.prinln();
+	System.out.prinln("Origen: " + this.getOrigen.coordenadas() + " - Alto: " + this.getAlto() + " - Ancho: " + this.getAncho());
+	System.out.prinln("Superficie: " + this.superficie() + " - Perimetro: " + this.perimetro());
 	}
 	
 	public double perimetro(){
@@ -58,10 +58,15 @@ public class Rectangulo{
 	}
 	
 	public double distanciaA(Rectaculo otroRectangulo){
-		double x1 = otroRectangulo.getCentro().getX();
-		double y1 = otroRectangulo.getCentro().getY();
-		double x2 = this.getCentro().getX();
-		double y2 = this.getCentro().getY();
-		return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+	return this.getOrigen.distanciaA(otroRectangulo.getOrigen());
 	}
-}
+	
+	public Rectangulo elMayor(Rectangulo otroRectangulo){
+	if(this.superficie() > otroRectangulo.superficie()){
+		return this;
+	}else{
+		return otroRectangulo;
+	}
+	}
+	
+	}

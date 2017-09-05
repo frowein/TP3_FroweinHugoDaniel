@@ -9,7 +9,7 @@ public class Circulo{
 	
 	public Circulo(){
 		this.setRadio(0.0);
-		this.getCentro().Punto(0,0);
+		this.setCentro(new Punto());
 	}
 	
 	private void setCentro(Punto p_centro){
@@ -43,15 +43,11 @@ public class Circulo{
 	}
 	
 	public double superficie(){
-		return Mathi.PI * Math.pow(this.getRadio(), 2);
+		return Math.PI * Math.pow(this.getRadio(), 2);
 	}
 	
 	public double distanciaA(Circulo otroCirculo){
-		double x1 = otroCirculo.getCentro().getX();
-		double y1 = otroCirculo.getCentro().getY();
-		double x2 = this.getCentro().getX();
-		double y2 = this.getCentro().getY();
-		return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+		return this.getCentro().distanciaA(otroCirculo.getCentro());
 	}
 	
 	public Circulo elMayor(Circulo otroCirculo){
