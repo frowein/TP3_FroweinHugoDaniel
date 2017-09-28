@@ -3,12 +3,19 @@ public class Escuela{
 	private String domicilio;
 	private String director;
 	
+	/**
+	*Constructor de la clase Escuela
+	*@param p_nombre dato de tipo String
+	*@param p_domicilio dato de tipo String
+	*@param p_director dato de tipo String
+	*/
 	public Escuela(String p_nombre, String p_domicilio, String p_director){
 	this.setNombre(p_nombre);
 	this.setDomicilio(p_domicilio);
 	this.setDirector(p_director);
 	}
 	
+	//Inicio de los mutadores y observadores
 	private void setNombre(String p_nombre){
 	this.nombre = p_nombre;
 	}
@@ -32,11 +39,12 @@ public class Escuela{
 	public String getDirector(){
 	return this.director;
 	}
+	//Fin de los mutadores y observadores
 	
-	public Docente getDocente(){
-	return this.docente;
-	}
-	
+	/**
+	*El dato imprimirRecibo recibe como parametro un objeto de clase Docente e imprime por pantalla un recibo
+	*@param p_docente objeto de tipo Docente
+	*/
 	public void imprimirRecibo(Docente p_docente){
 	System.out.println("Escuela: " + this.getNombre() + "\tDomicilio: " + this.getDomicilio() + "\tDirector: " + this.getDirector());
 	System.out.println("----------------------------------------------------------------------------------------------------------");

@@ -8,14 +8,14 @@ public class CuentaCorriente{
 	this.setNroCuenta(p_nroCuenta);
 	this.setTitular(p_titular);
 	this.setSaldo(0.0);
-	this.setLimiteDescubierto(500.0);
+	this.setLimiteDescubierto(500);
 	}
 	
 	public CuentaCorriente(int p_nroCuenta, Persona p_titular, double p_saldo){
 	this.setNroCuenta(p_nroCuenta);
 	this.setTitular(p_titular);
 	this.setSaldo(p_saldo);
-	this.setLimiteDescubierto(500.0);
+	this.setLimiteDescubierto(500);
 	}
 	
 	public int getNroCuenta(){
@@ -42,7 +42,7 @@ public class CuentaCorriente{
 	this.titular = p_titular;
 	}
 	
-	public int getLimiteDescubierto(){
+	public double getLimiteDescubierto(){
 	return this.limiteDescubierto;
 	}
 	
@@ -51,13 +51,9 @@ public class CuentaCorriente{
 	}
 	
 	private boolean puedeExtraer(double p_importe){
-	if(this.getLimiteDescubierto() > 0){
-	if(p_importe < this.getSaldo()){
+	if(this.getLimiteDescubierto() + p_importe < this.getSaldo()){
 	return true;
 	}else{
-	return false;
-	}
-	else{
 	return false;
 	}
 	}
@@ -67,15 +63,10 @@ public class CuentaCorriente{
 	}
 	
 	public void extraer(double p_importe){
-	if(puedeExtraer){
+	if(puedeExtraer(p_importe)){
 	this.extraccion(p_importe);
-	this.setLimiteDescubierto(this.getLimiteDescubierto() - 1);
 	}else{
-		if(this.getLimiteDescubierto > 0){
-		System.out.println("No puede extraer mas que el saldo!");
-		}else{
-		System.out.println("No tiene habilitado mas extracciones!");
-		}
+	System.out.println("El importe de extraccion sobrepasa el limite Descubierto!");
 	}
 	}
 	
@@ -83,10 +74,9 @@ public class CuentaCorriente{
 	this.setSaldo(this.getSaldo() + p_importe);
 	}
 	
-	public void moostrar(){
+	public void mostrar(){
 	System.out.println("Nro. Cuenta: " + this.getNroCuenta() + " - Saldo: " + this.getSaldo());
 	System.out.println("Titular: " + this.getTitular().nomYApe());
-	System.out.println("Extracciones posibles: " + this.getLimiteDescubierto());
-	}
-	
+	System.out.println("Descubierto: " + this.getLimiteDescubierto());
+	}	
 }

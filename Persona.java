@@ -1,15 +1,13 @@
 import java.util.*;
 /**
- * Ejercicio 1
- * 
+ * Clase Persona
  * @author Frowein Hugo Daniel 
- *
  */
 public class Persona{
     private int nroDni;
     private String nombre;
     private String apellido;
-    private int anioNacimiento;
+    private Calendar fechaNacimiento;
     
     /**
     * El constructor recibe 4 datos por parametro para despues utilizar los mutadores
@@ -26,6 +24,21 @@ public class Persona{
         this.setApellido(p_apellido);
         this.setAnioNacimiento(p_anio);
     }
+	
+	/**
+    * El constructor de la clase Persona ahora recibe un dato de tipo Calendar
+    * 
+    * @param p_dni numero de documento
+    * @param p_nombre nombre
+    * @param p_apellido apellido
+    * @param p_fecha dato de tipo Calendar
+    */
+	public Persona(int p_dni, String p_nombre, String p_apellido, Calendar p_fecha){
+        this.setDNI(p_dni);
+        this.setNombre(p_nombre);
+        this.setApellido(p_apellido);
+        this.setFechaNacimiento(p_fecha);
+    }
 
     //Inicio de los mutadores
     private void setDNI(int p_dni){
@@ -41,8 +54,14 @@ public class Persona{
     }
 
     private void setAnioNacimiento(int p_anio){
-        this.anioNacimiento = p_anio;
-    }   
+        Calendar anioNacimiento = new GregorianCalendar();
+		anioNacimiento.set(p_anio,0,1);
+		this.fechaNacimiento = anioNacimiento;
+    }
+	
+	private void setFechaNacimiento(Calendar p_fecha){
+		this.fechaNacimiento = p_fecha;
+	}
     //Fin de los mutadores
     
     //Inicio de los observadores
@@ -59,7 +78,7 @@ public class Persona{
     }
     
     public int getAnioNacimiento(){
-        return this.anioNacimiento;
+        return this.fechaNacimiento.get(Calendar.YEAR);
     }
     //Fin de los observadores
     

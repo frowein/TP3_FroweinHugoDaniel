@@ -7,7 +7,7 @@ public class CrearFigura{
 		Circulo circle = new Circulo(radio, point);
 		circle.desplazar( -240.0, -230.0);
 		circle.caracteristicas();
-		Punto otroPoint = new Point(5.2, 0.5);
+		Punto otroPoint = new Punto(5.2, 0.5);
 		double otroRadio = aleatorio.nextDouble() * 100.0;
 		Circulo otroCircle = new Circulo(otroRadio, otroPoint);
 		circle.elMayor(otroCircle).caracteristicas();

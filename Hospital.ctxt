@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Hospital
+comment1.params=p_hospital\ p_director
+comment1.target=Hospital(java.lang.String,\ java.lang.String)
+comment1.text=\r\nConstructor\ de\ la\ clase\ Hospital\r\n@param\ p_hospital\ dato\ de\ tipo\ String\r\n@param\ p_director\ dato\ de\ tipo\ String\r\n
+comment2.params=p_hospital
+comment2.target=void\ setHospital(java.lang.String)
+comment3.params=p_director
+comment3.target=void\ setDirector(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ getHospital()
+comment5.params=
+comment5.target=java.lang.String\ getDirector()
+comment6.params=p_paciente
+comment6.target=void\ consultaDatosFiliatorios(Paciente)
+comment6.text=\r\nEl\ metodo\ consultaDatosFiliatorios\ imprime\ por\ pantalla\ los\ datos\ del\ hospital\ y\ el\ director\r\n
+numComments=7

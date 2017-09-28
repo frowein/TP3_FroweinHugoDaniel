@@ -1,7 +1,6 @@
 
 /**
- * Ejercicio 6
- * 
+ * Clase Punto
  * @author Frowein Hugo Daniel
  */
 public class Punto{

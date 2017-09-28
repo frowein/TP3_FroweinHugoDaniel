@@ -34,12 +34,12 @@ public class Circulo{
 	
 	public void caracteristicas(){
 		System.out.println("****** Circulo ******");
-		System.out.println("Centro: " + this.getCentro.coordenadas() + " - Radio: " + this.getRadio());
+		System.out.println("Centro: " + this.getCentro().coordenadas() + " - Radio: " + this.getRadio());
 		System.out.println("Superficie: " + this.superficie() + " - Perimetro: " + this.perimetro());
 	}
 	
 	public double perimetro(){
-		return 2 * Math.PI() * this.getRadio();
+		return 2 * Math.PI * this.getRadio();
 	}
 	
 	public double superficie(){
